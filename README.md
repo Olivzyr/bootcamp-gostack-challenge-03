@@ -1,7 +1,7 @@
 # Tarefas
 
 #Estrutura e Configurações
-- [] Instalar Express e Instalar e configurar Nodemon e Sucrase (-D).
+- [x] Instalar Express e Instalar e configurar Nodemon e Sucrase (-D).
 - [] Config ESLint, Prettier & EditorConfig
 - [] Criar estrutura
 - [] Instalar e Config Sequelize (criar base de dados)
