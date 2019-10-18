@@ -1,0 +1,19 @@
+{
+  "name": "bootcamp-gostack-desafio-02",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SkullDarth/bootcamp-gostack-challenge-02.git",
+  "author": "Yan Oliveira <yan.brito@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --ispect src/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4",
+    "sucrase": "^3.10.1"
+  }
+}
