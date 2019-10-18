@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "dev:debug": "nodemon --ispect src/server.js"
+    "dev:debug": "nodemon --inspect src/server.js"
   },
   "devDependencies": {
     "nodemon": "^1.19.4",
