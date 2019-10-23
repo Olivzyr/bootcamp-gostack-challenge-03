@@ -6,7 +6,7 @@
 
 
    GoStack
-  [Challenge 2: Gympoint, the beginning](https://github.com/Rocketseat/bootcamp-gostack-desafio-01/blob/master/README.md#desafio-01-conceitos-do-nodejs)
+  [Challenge 2: Gympoint, the beginning](#)
 
    > "Simplicity is the ultimate sophistication." **Leonardo Da Vinci**
 </p>
