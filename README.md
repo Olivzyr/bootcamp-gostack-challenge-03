@@ -18,7 +18,7 @@
 
 * This challenge uses concepts presente in Node.JS, that includes Route Params, CRUD, sequelize, jwt, postgres database, hashpass, Yup and another features describes right below in procedures session.
 
-* To check the project in function please, click [here](#)
+* To check the project in function please, click [here](https://youtu.be/lDyINPp750o)
 
 
 --------------------------------------------------------------
