@@ -9,11 +9,13 @@ import User from '../app/models/User';
 // Importando o model de students para ser carregado no banco
 import Student from '../app/models/Student';
 
+import Plan from '../app/models/Plan';
+
 // Importando as configurações de conexão do banco
 import databaseConfig from '../config/database';
 
 // Criando um vetor de usuários
-const models = [User];
+const models = [User, Plan];
 
 // Criando um vetor de estudantes
 const modelsStudent = [Student];

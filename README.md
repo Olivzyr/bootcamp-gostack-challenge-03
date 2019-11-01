@@ -20,8 +20,14 @@
 --------------------------------------------------------------
 # Procedures
 
-## Structure and Settings
-- [x]
+## Administrator funcionalities
+- [x] Create migration table named plans with sequelize;
+- [x] yarn sequelize migration:create --name=plans
+- [x] Add coluns named title, duration, price, created_at, updated_at
+- [x] Send migration to database (yarn sequelize db:migrate)
+- [x] Create model for plans migration
+- [x] Create routes for model plans
+- [] Create PlanController to group model, migration and route
 
 ## User
 - [x]
