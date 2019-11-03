@@ -27,11 +27,7 @@
 - [x] Send migration to database (yarn sequelize db:migrate)
 - [x] Create model for plans migration
 - [x] Create routes for model plans
-- [] Create PlanController to group model, migration and route
-
-## User
-- [x]
-
-## Students
-- [x]
-
+- [x] Create PlanController to group model, migration and route functionalities
+- [] Create migration enrollment to connect student and plans migrations tables.
+- [] Create model enrollment to struct database table for controller
+- [] Create EnrollmentController to insert route crud functions.
