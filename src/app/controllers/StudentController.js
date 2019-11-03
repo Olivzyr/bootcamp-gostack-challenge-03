@@ -9,17 +9,16 @@ class StudentController {
       email: Yup.string()
         .email()
         .required(),
-      age: Yup.number()
-        .integer()
+      birth_date: Yup.date()
         .required(),
       wheight: Yup.number().required(),
-      height: Yup.number().required(),
+      height: Yup.number().required(),  
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
-
+    
     const studentExists = await Student.findOne({
       where: { email: req.body.email },
     });
@@ -47,7 +46,7 @@ class StudentController {
     const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email(),
-      age: Yup.number().integer(),
+      birth_date: Yup.date(),
       wheight: Yup.number(),
       height: Yup.number(),
     });

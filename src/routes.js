@@ -29,10 +29,10 @@ routes.put('/cadastrados/atualizados', StudentController.update);
 /**
  * Routes to crud Plans model
  */
-// routes.get('/listagem/cadastro', PlansController.index);
-routes.post('/listagem/cadastro', PlanController.store);
-// routes.put('/listagem/cadastro', PlansController.update);
-// routes.delete('/listagem/cadastro', PlansController.delete);
+routes.get('/plans', PlanController.index);
+routes.post('/plans', PlanController.store);
+routes.put('/plans/:id', PlanController.update);
+routes.delete('/plans/:id', PlanController.delete);
 
 // Exportanto o arquivo routes.js
 export default routes;
