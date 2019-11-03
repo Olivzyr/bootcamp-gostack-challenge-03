@@ -1,12 +1,11 @@
 import * as Yup from 'yup';
 import Plan from '../models/Plan';
-import User from '../models/User';
 
 class PlanController {
   async index(req, res) {
     // Listando os planos (sintax sequelize)
     const plans = await Plan.findAll({
-      order: [['createdAt', 'DESC']]
+      order: [['createdAt', 'DESC']],
     });
     return res.json(plans);
   }

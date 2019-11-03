@@ -28,8 +28,8 @@ module.exports = {
        */
 
        student_id: {
-         type: Sequelize.INTERGER,
-         references: { model: 'students', key:' id' },
+         type: Sequelize.INTEGER,
+         references: { model: 'students', key: 'id' },
          onUpdate: 'CASCADE',
          onDelete: 'SET NULL',
          allowNull: true

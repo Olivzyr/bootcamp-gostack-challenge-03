@@ -17,8 +17,8 @@ class Enrollment extends Model {
   // Gerando o relacionamento entre tabelas
   static associate(models) {
     this.belongsTo(models.Student, { foreignKey: 'student_id', as: 'student' });
-    this.belongsTo(models.Plan, { foreignKey: 'plan_id', as: 'plan' });
-  }
+    this.belongsTo(model.Plan, { foreignKey: 'plan_id', as: 'plan' });
+  } 
 }
 
 export default Enrollment;
