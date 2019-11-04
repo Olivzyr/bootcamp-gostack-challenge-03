@@ -5,6 +5,7 @@ import StudentController from './app/controllers/StudentController';
 import SessionController from './app/controllers/SessionController';
 import PlanController from './app/controllers/PlanController';
 import EnrollmentController from './app/controllers/EnrollmentController';
+import CheckinController from './app/controllers/CheckinController';
 
 // Middlewares
 import authMiddleware from './app/middlewares/auth';
@@ -15,6 +16,16 @@ const routes = new Router();
 routes.post('/users', UserController.store);
 
 routes.post('/sessions', SessionController.store);
+
+/**
+ * Routes to checkins students functions
+ */
+// Insert ckeckin
+routes.post('/students/:id/checkins', CheckinController.store);
+// List all checkins
+routes.get('/students/:id/checkins', CheckinController.index);
+
+////////////////////////////////////////////////////////////////////////////////
 
 // Middleware para autenticação de rotas
 routes.use(authMiddleware);
@@ -43,6 +54,8 @@ routes.get('/enrollment', EnrollmentController.index);
 routes.post('/enrollment', EnrollmentController.store);
 routes.put('/enrollment/:id', EnrollmentController.update);
 routes.delete('/enrollment/:id', EnrollmentController.delete);
+
+
 
 
 // Exportanto o arquivo routes.js

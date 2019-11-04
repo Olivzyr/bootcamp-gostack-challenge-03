@@ -7,12 +7,13 @@ import User from '../app/models/User';
 import Student from '../app/models/Student';
 import Plan from '../app/models/Plan';
 import Enrollment from '../app/models/Enrollment';
+import Checkin from '../app/models/Checkin';
 
 // Importando as configurações de conexão do banco
 import databaseConfig from '../config/database';
 
 // Criando um vetor de usuários
-const models = [User, Student, Plan, Enrollment];
+const models = [User, Student, Plan, Enrollment, Checkin];
 
 class Database {
   constructor() {

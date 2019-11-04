@@ -1,7 +1,4 @@
 import Sequelize, { Model } from 'sequelize';
-import { addMonths } from 'date-fns'
-
-import Plan from '../models/Plan';
 
 class Enrollment extends Model {
   static init(sequelize) {
