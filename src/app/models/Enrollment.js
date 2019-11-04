@@ -1,11 +1,15 @@
 import Sequelize, { Model } from 'sequelize';
+import { addMonths } from 'date-fns'
+
+import Plan from '../models/Plan';
 
 class Enrollment extends Model {
   static init(sequelize) {
     super.init(
       {
         start_date: Sequelize.DATE,
-        end_date: Sequelize.DATE
+        end_date: Sequelize.DATE,
+        price: Sequelize.INTEGER,
       },
       {
         sequelize,
@@ -17,8 +21,10 @@ class Enrollment extends Model {
   // Gerando o relacionamento entre tabelas
   static associate(models) {
     this.belongsTo(models.Student, { foreignKey: 'student_id', as: 'student' });
-    this.belongsTo(model.Plan, { foreignKey: 'plan_id', as: 'plan' });
+    this.belongsTo(models.Plan, { foreignKey: 'plan_id', as: 'plan' }); 
   } 
+
+  
 }
 
 export default Enrollment;

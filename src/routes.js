@@ -39,10 +39,10 @@ routes.delete('/plans/:id', PlanController.delete);
 /**
  * Routes to crud enrollment model
  */
-//routes.get('/enrollment', EnrollmentController.index);
+routes.get('/enrollment', EnrollmentController.index);
 routes.post('/enrollment', EnrollmentController.store);
-//routes.put('/enrollment/:id', EnrollmentController.update);
-//routes.delete('/enrollment/:id', EnrollmentController.delete);
+routes.put('/enrollment/:id', EnrollmentController.update);
+routes.delete('/enrollment/:id', EnrollmentController.delete);
 
 
 // Exportanto o arquivo routes.js

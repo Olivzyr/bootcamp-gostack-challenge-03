@@ -14,13 +14,14 @@ class Student extends Model {
           type: Sequelize.VIRTUAL,
           get() {
             return differenceInYears(new Date(), this.birth_date);
-          },
+          },  
         },
       },
       {
         sequelize,
       }
     );
+    return this;
   }
 }
 
