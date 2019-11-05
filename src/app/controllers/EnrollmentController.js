@@ -5,6 +5,8 @@ import Enrollment from '../models/Enrollment';
 import Plan from '../models/Plan';
 import Student from '../models/Student';
 
+import Mail from '../../lib/Mail';
+
 class EnrollmentController {
   async index(req, res) {
     const enrollment = await Enrollment.findAll({
@@ -43,13 +45,19 @@ class EnrollmentController {
       return res.status(400).json({ error: 'Student not exist' });
     }
     
-    // Converting dateformat
+    /**
+     * Converting date type and implements calculus to end date and price
+     */
     const dateStart = startOfDay(parseISO(start_date));
 
     const end_date = addMonths(dateStart, plan.duration);
     const price = (plan.duration * plan.price);
 
-    const enrollment = await Enrollment.create({ 
+    /**
+     * Create on database with new informations
+     */
+
+    const enrollmentInfo = await Enrollment.create({ 
       student_id, 
       plan_id, 
       start_date: dateStart, 
@@ -57,7 +65,32 @@ class EnrollmentController {
       price
       });
 
-    return res.json({ enrollment });
+    /**
+     * Email send configuration after create enrollment
+     */
+    const enrollment = await Enrollment.findByPk(student_id, {
+      include: [
+        {
+          model: Student,
+          as: 'student',
+          attributes: ['name', 'email'],
+        },
+        {
+          model: Plan,
+          as: 'plan',
+          attributes: ['title', 'duration', 'price']
+        },
+      ],
+    });
+    
+
+    await Mail.sendMail({
+      to: `${enrollment.student.name} <${enrollment.student.email}>`,
+      subject: 'Matricula Criada',
+      text: `Obrigado por se matricular pelo GymPoint, segue abaixo suas informações de matricula:`,
+    });
+
+    return res.json({ enrollmentInfo });
   }
 
   async update(req, res) {
