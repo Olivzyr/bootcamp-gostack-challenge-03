@@ -8,12 +8,13 @@ import Student from '../app/models/Student';
 import Plan from '../app/models/Plan';
 import Enrollment from '../app/models/Enrollment';
 import Checkin from '../app/models/Checkin';
+import HelpOrder from '../app/models/HelpOrder';
 
 // Importando as configurações de conexão do banco
 import databaseConfig from '../config/database';
 
 // Criando um vetor de usuários
-const models = [User, Student, Plan, Enrollment, Checkin];
+const models = [User, Student, Plan, Enrollment, Checkin, HelpOrder];
 
 class Database {
   constructor() {

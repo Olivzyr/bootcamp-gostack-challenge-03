@@ -6,6 +6,7 @@ import SessionController from './app/controllers/SessionController';
 import PlanController from './app/controllers/PlanController';
 import EnrollmentController from './app/controllers/EnrollmentController';
 import CheckinController from './app/controllers/CheckinController';
+import HelpOrderController from './app/controllers/HelpOrderController';
 
 // Middlewares
 import authMiddleware from './app/middlewares/auth';
@@ -24,6 +25,19 @@ routes.post('/sessions', SessionController.store);
 routes.post('/students/:id/checkins', CheckinController.store);
 // List all checkins
 routes.get('/students/:id/checkins', CheckinController.index);
+
+/**
+ * Help-Order routes Question
+ */
+routes.post('/students/:id/help-orders', HelpOrderController.store);
+routes.get('/students/:id/help-orders', HelpOrderController.index);
+routes.get('/students/help-orders', HelpOrderController.index);
+
+
+/**
+ * Help-Order routes Answer
+ */
+//routes.post('/help-orders/:id/answer', HelpOrderAnswerController.store);
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -54,6 +68,11 @@ routes.get('/enrollment', EnrollmentController.index);
 routes.post('/enrollment', EnrollmentController.store);
 routes.put('/enrollment/:id', EnrollmentController.update);
 routes.delete('/enrollment/:id', EnrollmentController.delete);
+
+/**
+ * Routes to answer students questions
+ */
+routes.put('/help-orders/:id/answer', HelpOrderController.update);
 
 
 
