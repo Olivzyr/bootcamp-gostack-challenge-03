@@ -6,6 +6,8 @@ import { Op } from 'sequelize';
 
 class CheckinController {
   async index(req, res) {
+    const { page = 1} = req.query;
+
     const student_id = req.params.id;
 
     const student = await Student.findByPk(student_id);
@@ -18,6 +20,8 @@ class CheckinController {
       where: { student_id },
       order: [['createdAt', 'DESC']],
       attributes: ['student_id', 'created_at'],
+      limit: 20,
+      offset: (page - 1) * 20,
     });
 
     // Check if student have realized checkins

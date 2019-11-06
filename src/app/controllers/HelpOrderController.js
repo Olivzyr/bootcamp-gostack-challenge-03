@@ -8,6 +8,8 @@ import Queue from '../../lib/Queue';
 
 class HelpOrderController {
   async index(req, res) {
+    const { page = 1 }= req.query;
+
     const student_id = req.params.id;
     const student = await Student.findByPk(student_id);
 
@@ -19,6 +21,8 @@ class HelpOrderController {
       const questionNoAnswer = await HelpOrder.findAll({ 
         where: { student_id, answer: null },
         order: [['createdAt', 'DESC']],
+        limit: 20,
+        offset: ( page - 1 ) * 20,
       });
 
       return res.json(questionNoAnswer);
@@ -29,6 +33,8 @@ class HelpOrderController {
       const questionNoAnswer = await HelpOrder.findAll({ 
         where: { answer: null },
         order: [['createdAt', 'DESC']],
+        limit: 20,
+        offset: ( page - 1 ) * 20,
       });
       return res.json(questionNoAnswer);
     }

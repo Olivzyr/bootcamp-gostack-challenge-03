@@ -11,8 +11,15 @@ import Queue from '../../lib/Queue';
 
 class EnrollmentController {
   async index(req, res) {
+    /**
+     * show 20 enrollment for page
+     */
+    const { page = 1 } = req.query;
+
     const enrollment = await Enrollment.findAll({
       order: [['createdAt', 'DESC']],
+      limit: 20,
+      offset: (page - 1) * 20,
     });
     return res.json(enrollment);
   }

@@ -20,10 +20,10 @@ class EnrollmentMail {
       context: {
         provider: enrollment.student.name,
         plan: enrollment.plan.title,
-        date: format(parseISO(enrollmentInfo.start_date), "'dia' dd 'de' MMMM', às' H:mm'h'", {
+        date: format(parseISO(enrollmentInfo.start_date), "'dia' dd 'de' MMMM'", {
           locale: pt,
         }),
-        planExpiration: format(parseISO(enrollmentInfo.end_date), "'dia' dd 'de' MMMM', às' H:mm'h'", {
+        planExpiration: format(parseISO(enrollmentInfo.end_date), "'dia' dd 'de' MMMM'", {
           locale: pt,
         }),
         price: enrollmentInfo.price,
