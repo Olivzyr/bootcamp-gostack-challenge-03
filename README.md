@@ -59,3 +59,64 @@
 * Apis for students to create and consult request for help for academy administrators.
 * Just for administrators to consult and respond to student requests for help.
 * Email queue for sending responses to academy students.
+
+## Project Tree
+```
+├── README.md
+├── nodemon.json
+├── package.json
+├── src
+|  ├── app
+|  |  ├── controllers
+|  |  |  ├── CheckinController.js
+|  |  |  ├── EnrollmentController.js
+|  |  |  ├── HelpOrderController.js
+|  |  |  ├── PlanController.js
+|  |  |  ├── SessionController.js
+|  |  |  ├── StudentController.js
+|  |  |  └── UserController.js
+|  |  ├── jobs
+|  |  |  ├── EnrollmentMail.js
+|  |  |  └── HelpOrderMail.js
+|  |  ├── middlewares
+|  |  |  └── auth.js
+|  |  ├── models
+|  |  |  ├── Checkin.js
+|  |  |  ├── Enrollment.js
+|  |  |  ├── HelpOrder.js
+|  |  |  ├── Plan.js
+|  |  |  ├── Student.js
+|  |  |  └── User.js
+|  |  └── views
+|  |     └── emails
+|  |        ├── enrollment.hbs
+|  |        ├── helpOrder.hbs
+|  |        ├── layouts
+|  |        |  └── default.hbs
+|  |        └── partials
+|  |           └── footer.hbs
+|  ├── app.js
+|  ├── config
+|  |  ├── auth.js
+|  |  ├── database.js
+|  |  ├── mail.js
+|  |  └── redis.js
+|  ├── database
+|  |  ├── index.js
+|  |  ├── migrations
+|  |  |  ├── 20191019062320-create-users.js
+|  |  |  ├── 20191022003954-create-students.js
+|  |  |  ├── 20191101013800-create-plans.js
+|  |  |  ├── 20191102171859-create-enrollments.js
+|  |  |  ├── 20191104035006-create-checkins.js
+|  |  |  └── 20191104213546-create-help-orders.js
+|  |  └── seeds
+|  |     └── 20191019173847-admin-user.js
+|  ├── lib
+|  |  ├── Mail.js
+|  |  └── Queue.js
+|  ├── queue.js
+|  ├── routes.js
+|  └── server.js
+└── yarn.lock
+   ```
