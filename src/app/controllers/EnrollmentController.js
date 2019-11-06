@@ -1,5 +1,7 @@
 import * as Yup from 'yup';
-import { addMonths, startOfDay, parseISO } from 'date-fns';
+import { addMonths, startOfDay, parseISO, format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
+
 
 import Enrollment from '../models/Enrollment';
 import Plan from '../models/Plan';
@@ -83,11 +85,21 @@ class EnrollmentController {
       ],
     });
     
-
     await Mail.sendMail({
       to: `${enrollment.student.name} <${enrollment.student.email}>`,
       subject: 'Matricula Criada',
-      text: `Obrigado por se matricular pelo GymPoint, segue abaixo suas informações de matricula:`,
+      template: 'enrollment', 
+      context: {
+        provider: enrollment.student.name,
+        plan: enrollment.plan.title,
+        date: format(enrollmentInfo.start_date, "'dia' dd 'de' MMMM', às' H:mm'h'", {
+          locale: pt,
+        }),
+        planExpiration: format(enrollmentInfo.end_date, "'dia' dd 'de' MMMM', às' H:mm'h'", {
+          locale: pt,
+        }),
+        price: enrollmentInfo.price,
+      },
     });
 
     return res.json({ enrollmentInfo });

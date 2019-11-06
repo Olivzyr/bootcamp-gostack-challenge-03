@@ -1,7 +1,12 @@
 import * as Yup from 'yup';
+import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import HelpOrder from '../models/HelpOrder';
 import Student from '../models/Student';
+
+import Mail from '../../lib/Mail';
+
 
 class HelpOrderController {
   async index(req, res) {
@@ -69,7 +74,15 @@ class HelpOrderController {
     });
     
     const helpOrder_id = req.params.id;
-    const helpOrder = await HelpOrder.findByPk(helpOrder_id);
+    const helpOrder = await HelpOrder.findByPk(helpOrder_id, {
+      include: [
+        {
+          model: Student,
+          as: 'student',
+          attributes: ['name', 'email'],
+        },
+      ],
+    });
 
 
     /**
@@ -82,7 +95,11 @@ class HelpOrderController {
 
    
     if (helpOrder) {
-      const questionNoAnswer = await HelpOrder.findAll({ where: { answer: null }});
+      const questionNoAnswer = await HelpOrder.findAll({ 
+        where: {
+          answer: null 
+        },
+      });
       
       if (questionNoAnswer) {
         const { answer }  = req.body;
@@ -92,6 +109,25 @@ class HelpOrderController {
           answer,
           answer_at
         });
+
+        /**
+         * Send Email after confirm answer
+         */
+
+        await Mail.sendMail({
+          to: `${helpOrder.student.name} <${helpOrder.student.email}>`,
+          subject: 'Solicitação de resposta atendida',
+          template: 'helpOrder',
+          context: {
+            provider: helpOrder.student.name,
+            question: helpOrder.question,
+            answer: helpOrder.answer,
+            answerDate: format(helpOrder.answer_at, "'dia' dd 'de' MMMM', às' H:mm'h'", {
+              locale: pt,
+            }),
+          }
+        });
+
         return res.json(gymAnswer);
       } else {
         return res.json({ message: 'Pergunta já possui uma resposta' });  
@@ -99,6 +135,7 @@ class HelpOrderController {
     } else {
       return res.status(400).json({ error: 'Not have any order to respond' });
     }
+
 
   }
 
