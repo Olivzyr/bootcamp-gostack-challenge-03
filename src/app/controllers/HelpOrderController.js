@@ -1,11 +1,9 @@
 import * as Yup from 'yup';
-import { format } from 'date-fns';
-import pt from 'date-fns/locale/pt';
-
 import HelpOrder from '../models/HelpOrder';
 import Student from '../models/Student';
 
-import Mail from '../../lib/Mail';
+import HelpOrderMail from '../jobs/HelpOrderMail';
+import Queue from '../../lib/Queue';
 
 
 class HelpOrderController {
@@ -113,20 +111,10 @@ class HelpOrderController {
         /**
          * Send Email after confirm answer
          */
-
-        await Mail.sendMail({
-          to: `${helpOrder.student.name} <${helpOrder.student.email}>`,
-          subject: 'Solicitação de resposta atendida',
-          template: 'helpOrder',
-          context: {
-            provider: helpOrder.student.name,
-            question: helpOrder.question,
-            answer: helpOrder.answer,
-            answerDate: format(helpOrder.answer_at, "'dia' dd 'de' MMMM', às' H:mm'h'", {
-              locale: pt,
-            }),
-          }
+        await Queue.add(HelpOrderMail.key, {
+          helpOrder,
         });
+        
 
         return res.json(gymAnswer);
       } else {

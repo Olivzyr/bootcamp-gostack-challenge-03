@@ -1,13 +1,13 @@
 import * as Yup from 'yup';
-import { addMonths, startOfDay, parseISO, format } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import { addMonths, startOfDay, parseISO} from 'date-fns';
 
 
 import Enrollment from '../models/Enrollment';
 import Plan from '../models/Plan';
 import Student from '../models/Student';
 
-import Mail from '../../lib/Mail';
+import EnrollmentMail from '../jobs/EnrollmentMail';
+import Queue from '../../lib/Queue';
 
 class EnrollmentController {
   async index(req, res) {
@@ -85,22 +85,15 @@ class EnrollmentController {
       ],
     });
     
-    await Mail.sendMail({
-      to: `${enrollment.student.name} <${enrollment.student.email}>`,
-      subject: 'Matricula Criada',
-      template: 'enrollment', 
-      context: {
-        provider: enrollment.student.name,
-        plan: enrollment.plan.title,
-        date: format(enrollmentInfo.start_date, "'dia' dd 'de' MMMM', às' H:mm'h'", {
-          locale: pt,
-        }),
-        planExpiration: format(enrollmentInfo.end_date, "'dia' dd 'de' MMMM', às' H:mm'h'", {
-          locale: pt,
-        }),
-        price: enrollmentInfo.price,
-      },
+    /**
+     * import Queue method to call key function presente in EnrollmentMail object
+     * Send Email after confirm enrollment.
+     */
+    await Queue.add(EnrollmentMail.key, {
+      enrollment,
+      enrollmentInfo,
     });
+
 
     return res.json({ enrollmentInfo });
   }
