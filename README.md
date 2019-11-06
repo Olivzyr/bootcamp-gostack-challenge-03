@@ -120,3 +120,17 @@
 |  └── server.js
 └── yarn.lock
    ```
+
+### - Insomnia requisitions
+
+![Insomnia Gympoint](https://user-images.githubusercontent.com/16024701/68344233-4c806500-00cd-11ea-891c-c3844734c0cd.png)
+
+### - Postgres structure database
+
+![Postgres Gympoint database](https://user-images.githubusercontent.com/16024701/68344327-881b2f00-00cd-11ea-91ee-fa1db12141b0.png)
+
+
+### - Mailtrap testing emails notifications
+
+![Mailtrap test](https://user-images.githubusercontent.com/16024701/68344420-bbf65480-00cd-11ea-8764-a7f2c50fb635.png)
+

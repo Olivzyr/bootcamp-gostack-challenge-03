@@ -34,11 +34,6 @@ routes.get('/students/:id/help-orders', HelpOrderController.index);
 routes.get('/students/help-orders', HelpOrderController.index);
 
 
-/**
- * Help-Order routes Answer
- */
-//routes.post('/help-orders/:id/answer', HelpOrderAnswerController.store);
-
 ////////////////////////////////////////////////////////////////////////////////
 
 // Middleware para autenticação de rotas
