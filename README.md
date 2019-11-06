@@ -44,7 +44,6 @@
 * nodemon - Statrt and automatic restart of the application during development.
 * prettier - Code Formatter
 * sucrase - Using the ES6 syntax pattern
-* sentry - Handling production exceptions
 * youch - Message handling for the development and production environment
 
 ## Developed Features
