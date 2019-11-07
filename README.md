@@ -6,8 +6,11 @@
   <br />
   <img src="https://img.shields.io/github/issues/SkullDarth/bootcamp-gostack-challenge-03">
   <img src="https://img.shields.io/github/forks/SkullDarth/bootcamp-gostack-challenge-03">
+  <img src="https://img.shields.io/badge/made%20by-SkullDarth-lightgrey">
   <img src="https://img.shields.io/github/stars/SkullDarth/bootcamp-gostack-challenge-03">
   <img src="https://img.shields.io/github/license/SkullDarth/bootcamp-gostack-challenge-03?logoColor=MIT">
+
+  <h4 align="center">titulo<link src=""></h4>
 
 
 GoStack - [Challenge 3: Gympoint, continuing the application](#)
@@ -20,9 +23,9 @@ GoStack - [Challenge 3: Gympoint, continuing the application](#)
 ---
 * The objective of this challenge is to create a second part of backend API gym systems whe can save, search, controlling authentication services and edit students matriculated in the gym.
 
-* To check the first part of project construction in function please, click [here][challange02].
+* To check the first part of project construction in function please, click [here][challenge02].
 
-* To view this project in function please. click [here](https://github.com/SkullDarth/bootcamp-gostack-challenge-03#resources-and-procedures).
+* To view this project in function please. click [here][challenge03].
 
 
 ---
@@ -189,7 +192,8 @@ This project is under the MIT license. See the [LICENSE](./LICENSE) for more inf
 
 
 
-[challange02]: https://github.com/SkullDarth/bootcamp-gostack-challenge-02
+[challenge02]: https://github.com/SkullDarth/bootcamp-gostack-challenge-02
+[challenge03]: https://youtu.be/34A_NV777RQ
 
 [gympoint logo]: https://github.com/Rocketseat/bootcamp-gostack-desafio-02/blob/master/.github/logo.png?raw=true
 
@@ -201,6 +205,7 @@ This project is under the MIT license. See the [LICENSE](./LICENSE) for more inf
 [forks]: https://img.shields.io/github/forks/SkullDarth/bootcamp-gostack-challenge-03
 [stars]: https://img.shields.io/github/stars/SkullDarth/bootcamp-gostack-challenge-03
 [license]: https://img.shields.io/github/license/SkullDarth/bootcamp-gostack-challenge-03?logoColor=MIT
+[made-by]: https://img.shields.io/badge/made%20by-SkullDarth-lightgrey
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
