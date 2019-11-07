@@ -1,50 +1,49 @@
 
 <p align="center">
-  <img src="https://github.com/Rocketseat/bootcamp-gostack-desafio-02/blob/master/.github/logo.png?raw=true">
+  <img src="https://github.com/Rocketseat/bootcamp-gostack-desafio-02/blob/master/.github/logo.png?raw=true",>
+  <br />
+  <br />
+  <br />
+  <img src="https://img.shields.io/github/issues/SkullDarth/bootcamp-gostack-challenge-03">
+  <img src="https://img.shields.io/github/forks/SkullDarth/bootcamp-gostack-challenge-03">
+  <img src="https://img.shields.io/github/stars/SkullDarth/bootcamp-gostack-challenge-03">
+  <img src="https://img.shields.io/github/license/SkullDarth/bootcamp-gostack-challenge-03?logoColor=MIT">
 
 
-   GoStack
-  [Challenge 3: Gympoint, continuing the application](#)
+GoStack - [Challenge 3: Gympoint, continuing the application](#)
 
    > "How you look at it is pretty much how you'll see it." **Rasheed Ogunlaru**
 </p>
 
 ## **About the challenge:**
 #### **Developer one system whe can control and manager gym's using Postgres, Redis and Node.JS**
---------------------------------------------------------------
+---
 * The objective of this challenge is to create a second part of backend API gym systems whe can save, search, controlling authentication services and edit students matriculated in the gym.
 
-* To check the first part of project construction in function please, click [here](https://github.com/SkullDarth/bootcamp-gostack-challenge-02).
+* To check the first part of project construction in function please, click [here][challange02].
 
-* To view this project in function please. click [here](#).
+* To view this project in function please. click [here](https://github.com/SkullDarth/bootcamp-gostack-challenge-03#resources-and-procedures).
 
 
---------------------------------------------------------------
+---
 # Resources and Procedures
 
-## Technologies APIs and Libraries Used to create this project
+## Technologies APIs and Libraries used to create this project
 
-* Postgres - Relational Data Base
-* Redis - NoSQL Database to storage queue emails
-* bcryptjs - Encryption services
-* bee-queue - Creating in-app services using Redis
-* cors - Application API Access and Security
-* date-fns - Date Handling
-* dotenv - Environment Variables
-* express - Apis Development
-* jsonwebtoken - JWT Authentication
-* nodemailer - Sending Emails
-* express-handlebars - Email Layout Development
-* nodemailer-express-handlebars - Email Layout Development
-* pg - For use with postgress database
-* pg-hstore - For use with postgress database
-* sequelize - Relational Object Mapping
-* yup - Data Validation.
-* eslint - Code Standardization
-* nodemon - Statrt and automatic restart of the application during development.
-* prettier - Code Formatter
-* sucrase - Using the ES6 syntax pattern
-* youch - Message handling for the development and production environment
+This project was developed with the following technologies:
+
+- [Express][express]
+- [Node.js][nodejs]
+- [Sequelize][sequelize]
+- [node-postgres][pg] and [pg-hstore][pg-hstore]
+- [Json Web Tokens][jwt]
+- [Nodemailer][nodemailer]
+- [Bee Queue][bee]
+- [dotenv][dotenv]
+- [bcryptjs][bcryptjs]
+- [Date-fns][date-fns]
+- [express-handlebars][exphbs]
+- [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
 ## Developed Features
 
@@ -59,6 +58,43 @@
 * Apis for students to create and consult request for help for academy administrators.
 * Just for administrators to consult and respond to student requests for help.
 * Email queue for sending responses to academy students.
+
+---
+
+## Running for First Time
+
+To clone and run this application, you'll need [Git](https://git-scm.com), [Docker](https://www.docker.com), [Node.js v10.16][nodejs] or higher + [Yarn v1.13][yarn] or higher installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/SkullDarth/bootcamp-gostack-challenge-03.git gympoint-backend
+
+# Go into the repository
+$ cd gympoint-backend
+
+# Install dependencies
+$ yarn install
+
+# Run Postgres
+$ docker run --name database -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -d postgres:11
+
+# Run Redis
+$ docker run --name redis -p 6379:6379 -d -t redis:alpine
+
+# Create a new database named `gympoint` and run the following commands:
+# Run Migrations and Seeds
+$ yarn sequelize db:migrate
+$ yarn sequelize db:seed:all
+
+# Run Nodemailer
+$ yarn queue
+
+# Run the Server
+$ yarn dev
+```
+#### There is an [Insomnia file](./insomnia.json) you can load on your Insomnia to test the routes.
+
+---
 
 ## Project Tree
 ```
@@ -120,17 +156,61 @@
 |  └── server.js
 └── yarn.lock
    ```
+---
 
-### - Insomnia requisitions
+## Project in function
 
-![Insomnia Gympoint](https://user-images.githubusercontent.com/16024701/68344233-4c806500-00cd-11ea-891c-c3844734c0cd.png)
+### - Insomnia: Routes and requests
 
-### - Postgres structure database
+![Insomnia Gympoint][Insomnia Gympoint]
 
-![Postgres Gympoint database](https://user-images.githubusercontent.com/16024701/68344327-881b2f00-00cd-11ea-91ee-fa1db12141b0.png)
+### - Postgres: Structure database
+
+![Postgres Gympoint database][Postgres Gympoint database]
 
 
-### - Mailtrap testing emails notifications
+### - Mailtrap: Emails notifications
 
-![Mailtrap test](https://user-images.githubusercontent.com/16024701/68344420-bbf65480-00cd-11ea-8764-a7f2c50fb635.png)
+![Mailtrap test][Mailtrap test]
+
+
+## License
+This project is under the MIT license. See the [LICENSE](./LICENSE) for more information.
+
+---
+
+#### Made by Yan Oliveira [Get in touch!](https://www.linkedin.com/in/yan-brito/)
+
+
+
+
+[challange02]: https://github.com/SkullDarth/bootcamp-gostack-challenge-02
+
+[gympoint logo]: https://github.com/Rocketseat/bootcamp-gostack-desafio-02/blob/master/.github/logo.png?raw=true
+
+[Insomnia Gympoint]: https://user-images.githubusercontent.com/16024701/68344233-4c806500-00cd-11ea-891c-c3844734c0cd.png
+[Postgres Gympoint database]: https://user-images.githubusercontent.com/16024701/68344327-881b2f00-00cd-11ea-91ee-fa1db12141b0.png
+[Mailtrap test]:https://user-images.githubusercontent.com/16024701/68344420-bbf65480-00cd-11ea-8764-a7f2c50fb635.png
+
+[issues]: https://img.shields.io/github/issues/SkullDarth/bootcamp-gostack-challenge-03
+[forks]: https://img.shields.io/github/forks/SkullDarth/bootcamp-gostack-challenge-03
+[stars]: https://img.shields.io/github/stars/SkullDarth/bootcamp-gostack-challenge-03
+[license]: https://img.shields.io/github/license/SkullDarth/bootcamp-gostack-challenge-03?logoColor=MIT
+
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vc]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[express]: https://expressjs.com
+[sequelize]: https://sequelize.org
+[pg]:https://github.com/brianc/node-postgres
+[pg-hstore]: https://github.com/scarney81/pg-hstore
+[jwt]: https://jwt.io/
+[nodemailer]: https://nodemailer.com/about/
+[bee]: https://bee-queue.com/
+[dotenv]: https://github.com/motdotla/dotenv#readme
+[bcryptjs]: https://github.com/dcodeIO/bcrypt.js/
+[date-fns]: (https://date-fns.org/)
+[exphbs]: https://github.com/ericf/express-handlebars
 
