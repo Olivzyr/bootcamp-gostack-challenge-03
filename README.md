@@ -41,7 +41,7 @@ This project was developed with the following technologies:
 - [Bee Queue][bee]
 - [dotenv][dotenv]
 - [bcryptjs][bcryptjs]
-- [Date-fns][date-fns]
+- [date-fns][date-fns]
 - [express-handlebars][exphbs]
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
@@ -216,6 +216,6 @@ This project is under the MIT license. See the [LICENSE](./LICENSE) for more inf
 [bee]: https://bee-queue.com/
 [dotenv]: https://github.com/motdotla/dotenv#readme
 [bcryptjs]: https://github.com/dcodeIO/bcrypt.js/
-[date-fns]: (https://date-fns.org/)
+[date-fns]: https://date-fns.org/
 [exphbs]: https://github.com/ericf/express-handlebars
 
