@@ -77,7 +77,7 @@ class EnrollmentController {
     /**
      * Email send configuration after create enrollment
      */
-    const enrollment = await Enrollment.findByPk(student_id, {
+    const enrollment = await Enrollment.findByPk(enrollmentInfo.id, {
       include: [
         {
           model: Student,
