@@ -5,7 +5,7 @@ module.exports = {
   dialect: 'postgres',
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
-  password:process.env.DB_PASS,
+  password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   define: {
     // Atribui a data de criação e edição nas colunas do banco de cada registro
