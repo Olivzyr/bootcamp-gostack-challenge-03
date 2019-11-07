@@ -16,7 +16,7 @@ GoStack - [Challenge 3: Gympoint, continuing the application](#)
 </p>
 
 ## **About the challenge:**
-#### **Developer one system whe can control and manager gym's using Postgres, Redis and Node.JS**
+#### **Developer one RESTful back-end system whe can control and manager gym's using Postgres, Redis and Node.JS**
 ---
 * The objective of this challenge is to create a second part of backend API gym systems whe can save, search, controlling authentication services and edit students matriculated in the gym.
 
@@ -98,7 +98,9 @@ $ yarn dev
 
 ## Project Tree
 ```
+├── LICENSE.md
 ├── README.md
+├── insomnia.json
 ├── nodemon.json
 ├── package.json
 ├── src
@@ -155,6 +157,9 @@ $ yarn dev
 |  ├── routes.js
 |  └── server.js
 └── yarn.lock
+
+directory: 3086 file: 17514
+ignored: directory (84)
    ```
 ---
 

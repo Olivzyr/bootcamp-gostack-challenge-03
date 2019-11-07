@@ -10,6 +10,7 @@
  * yarn queue -> execute queue,
  * yarn dev -> execute node aplication.
  */
+import 'dotenv/config';
 
 import Queue from './lib/Queue';
 
