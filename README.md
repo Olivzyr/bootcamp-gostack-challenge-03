@@ -11,9 +11,9 @@
   <img src="https://img.shields.io/github/license/SkullDarth/bootcamp-gostack-challenge-03?logoColor=MIT">
 
    <p align="center">
-      <a href="#about-the-challenge">About the challenge</a> 
+      <a href="#about-the-challenge">About the challenge</a>
       <strong>|</strong>
-      <a href="#resources-and-procedures">Resources and Procedures</a> 
+      <a href="#resources-and-procedures">Resources and Procedures</a>
       <strong>|</strong>
       <a href="#running-for-first-time">Running for First Time</a>
       <strong>|</strong>
@@ -86,7 +86,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Dock
 $ git clone https://github.com/SkullDarth/bootcamp-gostack-challenge-03.git gympoint-backend
 
 # Go into the repository
-$ cd gympoint-backend
+$ cd bootcamp-gostack-challenge-03
 
 # Install dependencies
 $ yarn install
